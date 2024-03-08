@@ -1,20 +1,21 @@
+import 'package:bonfire/bonfire.dart';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+import 'package:cleaning_my_home/menu.dart';
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  if (!kIsWeb) {
+    await Flame.device.setLandscape();
+    await Flame.device.fullScreen();
   }
+
+  runApp(
+    const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Menu(),
+    ),
+  );
 }

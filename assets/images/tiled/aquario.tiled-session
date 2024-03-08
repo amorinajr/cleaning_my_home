@@ -1,0 +1,57 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "aquario.tmj",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "aquario-2.tmj": {
+            "expandedObjectLayers": [
+                6,
+                5
+            ],
+            "scale": 0.33,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 639.3939393939394,
+                "y": 360.6060606060606
+            }
+        },
+        "aquario.tmj": {
+            "expandedObjectLayers": [
+                5,
+                7
+            ],
+            "scale": 0.75,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 990.6666666666667,
+                "y": 694.6666666666665
+            }
+        },
+        "aquario.tsj": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "map.height": 45,
+    "map.lastUsedFormat": "json",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 80,
+    "openFiles": [
+        "aquario.tmj",
+        "aquario.tsj",
+        "aquario-2.tmj"
+    ],
+    "project": "aquario.tiled-project",
+    "recentFiles": [
+        "aquario-2.tmj",
+        "aquario.tsj",
+        "aquario.tmj"
+    ],
+    "tileset.lastUsedFormat": "json"
+}

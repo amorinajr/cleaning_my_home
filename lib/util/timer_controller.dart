@@ -1,0 +1,29 @@
+import 'package:bonfire/bonfire.dart';
+import 'package:flutter/material.dart';
+
+class TimerController extends ChangeNotifier {
+  static final TimerController _singleton = TimerController._internal();
+
+  factory TimerController() {
+    return _singleton;
+  }
+  TimerController._internal();
+
+  Timer _countdown = Timer(2);
+  Timer get countDown => _countdown;
+
+  set countDown(Timer newCountdown) {
+    _countdown = newCountdown;
+    notifyListeners();
+  }
+
+  void configure({required Timer maxCountDown}) {
+    _countdown = maxCountDown;
+    notifyListeners();
+  }
+
+  void updateBlocksNumber(Timer countDown) {
+    this.countDown = countDown;
+    notifyListeners();
+  }
+}

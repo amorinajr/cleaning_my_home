@@ -1,5 +1,5 @@
 name: cleaning_my_home
-description: "A new Flutter project."
+description: "Game Cleaning My House."
 publish_to: 'none'
 version: 0.1.0
 
@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
+  bonfire: ^3.6.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -17,3 +19,10 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/images/
+    - assets/images/player/
+    - assets/images/items/
+    - assets/images/tiled/
