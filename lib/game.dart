@@ -9,20 +9,31 @@ import 'package:cleaning_my_home/decoration/blocks.dart';
 import 'package:cleaning_my_home/decoration/recyclebin.dart';
 
 class Game extends StatefulWidget {
-  const Game({super.key});
+  static int map = 1;
+  final int mapEscolhido;
+  const Game({super.key, required this.mapEscolhido});
 
   @override
   State<Game> createState() => _GameState();
 }
 
 class _GameState extends State<Game> {
+  Key _gameKey = GlobalKey();
+  late int mapEscolhido;
+
+  @override
+  void initState() {
+    super.initState();
+    mapEscolhido = widget.mapEscolhido;
+  }
+
   @override
   Widget build(BuildContext context) {
     const tileSize = 16.0;
-    debugPrint('entrou aqui');
     return Material(
       color: Colors.transparent,
       child: BonfireWidget(
+        key: _gameKey,
         keyboardConfig: KeyboardConfig(
           directionalKeys: KeyboardDirectionalKeys.arrows(),
         ),
@@ -30,7 +41,7 @@ class _GameState extends State<Game> {
           directional: JoystickDirectional(),
         ),
         map: WorldMapByTiled(
-          TiledReader.asset('tiled/aquario.tmj'),
+          TiledReader.asset('tiled/aquario-$mapEscolhido.tmj'),
           objectsBuilder: {
             'block': (properties) => Blocks(properties.position),
             'recyclebin': (properties) => RecycleBin(properties.position),
@@ -56,8 +67,14 @@ class _GameState extends State<Game> {
         debugMode: true,
         showCollisionArea: true,
         interface: Interface(),
-        components: [GameController()],
+        components: [GameController(reset: reset)],
       ),
     );
+  }
+
+  void reset() {
+    setState(() {
+      _gameKey = UniqueKey();
+    });
   }
 }

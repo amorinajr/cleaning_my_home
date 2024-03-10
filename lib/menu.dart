@@ -22,7 +22,6 @@ class _MenuState extends State<Menu> {
                 "Cleaning My Home",
                 style: TextStyle(
                   color: Colors.white,
-                  // fontFamily: 'Normal',
                   fontSize: 30.0,
                 ),
               ),
@@ -46,7 +45,6 @@ class _MenuState extends State<Menu> {
                     'Play',
                     style: TextStyle(
                       color: Colors.white,
-                      // fontFamily: 'Normal',
                       fontSize: 17.0,
                     ),
                   ),
@@ -54,7 +52,9 @@ class _MenuState extends State<Menu> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const Game(),
+                        builder: (context) => const Game(
+                          mapEscolhido: 1,
+                        ),
                       ),
                     );
                   },

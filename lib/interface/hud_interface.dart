@@ -1,9 +1,9 @@
-import 'package:cleaning_my_home/util/timer_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bonfire/bonfire.dart';
 
 import 'package:cleaning_my_home/util/blocks_controller.dart';
+import 'package:cleaning_my_home/util/timer_controller.dart';
 
 class Interface extends GameInterface {
   @override
@@ -30,6 +30,7 @@ class BlocksCounterInterface extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = BlocksNumberController();
+
     return Material(
       type: MaterialType.transparency,
       child: ListenableBuilder(
@@ -42,7 +43,7 @@ class BlocksCounterInterface extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      controller.blocksNumber.toInt().toString(),
+                      controller.blocksNumber.toString(),
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,
@@ -68,7 +69,6 @@ class TimerInterface extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final timerController = TimerController();
-    debugPrint('Enntro no TimerInterface');
 
     return Material(
       type: MaterialType.transparency,
@@ -82,7 +82,9 @@ class TimerInterface extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      timerController.countDown.current.toString(),
+                      timerController.remainingTime > 500
+                          ? '0'
+                          : timerController.remainingTime.toString(),
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,

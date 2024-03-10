@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:bonfire/bonfire.dart';
 
 import 'package:cleaning_my_home/util/commom_sprite_sheet.dart';
+import 'package:cleaning_my_home/util/custom_sprite_animation_widget.dart';
+import 'package:cleaning_my_home/decoration/blocks.dart';
 
 class RecycleBin extends GameDecoration with Sensor {
+  bool crabContact = false;
+
   RecycleBin(Vector2 position)
       : super.withSprite(
           sprite: CommomSpritesheet.recyclebinSprite,
@@ -22,20 +27,61 @@ class RecycleBin extends GameDecoration with Sensor {
     return super.onLoad();
   }
 
-  // @override
-  // void onMount() {
-  //   debugPrint('on moount no recyclebin ');
-  //   super.onMount();
-  // }
+  @override
+  void onContactExit(GameComponent component) {
+    if (component is Player) {
+      crabContact = false;
+      debugPrint(
+          'onContact player não está no recyclebin - crabContact = $crabContact ');
+    }
+
+    super.onContactExit(component);
+  }
 
   @override
   void onContact(GameComponent component) {
-    if (component is Player) {
-      debugPrint('onContact player no recyclebin ');
-    }
+    bool containBlocks = gameRef.query<Blocks>().isNotEmpty;
 
-    // debugPrint('entro no oncontact ');
-    // debugPrint('onContact Block = ${gameRef.query<Blocks>()}');
+    if (component is Player) {
+      if (containBlocks && !crabContact) {
+        debugPrint('onContact player no recyclebin ');
+
+        gameRef.pauseEngine();
+
+        TalkDialog.show(
+          gameRef.context,
+          [
+            Say(
+              text: [
+                const TextSpan(
+                  text: 'Você ainda não pegou todos os blocos, procure mais!',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w100,
+                  ),
+                ),
+              ],
+              person: CustomSpriteAnimationWidget(
+                animation: TalkSpriteSheet.crabTalking(),
+              ),
+              personSayDirection: PersonSayDirection.RIGHT,
+            ),
+          ],
+          // onChangeTalk: (index) {
+          //   Sounds.interaction();
+          // },
+          onFinish: () {
+            gameRef.resumeEngine();
+            crabContact = true;
+          },
+          logicalKeyboardKeysToNext: [
+            LogicalKeyboardKey.space,
+          ],
+        );
+      } else {
+        debugPrint('onContact todos os blocs');
+      }
+    }
 
     super.onContact(component);
   }

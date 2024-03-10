@@ -9,7 +9,7 @@ class TimerController extends ChangeNotifier {
   }
   TimerController._internal();
 
-  Timer _countdown = Timer(2);
+  late Timer _countdown;
   Timer get countDown => _countdown;
 
   set countDown(Timer newCountdown) {
@@ -24,6 +24,25 @@ class TimerController extends ChangeNotifier {
 
   void updateBlocksNumber(Timer countDown) {
     this.countDown = countDown;
+    notifyListeners();
+  }
+
+//  remaining Time
+  late int _remainingTime;
+  int get remainingTime => _remainingTime;
+
+  set remainingTime(int newRemainingTime) {
+    _remainingTime = newRemainingTime;
+    notifyListeners();
+  }
+
+  void configureRemaingTime({required int maxRemainingTime}) {
+    _remainingTime = maxRemainingTime;
+    notifyListeners();
+  }
+
+  void updateRemaingTime(int remainingTime) {
+    this.remainingTime = remainingTime;
     notifyListeners();
   }
 }

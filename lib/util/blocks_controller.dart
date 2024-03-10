@@ -10,11 +10,19 @@ class BlocksNumberController extends ChangeNotifier {
   }
   BlocksNumberController._internal();
 
-  int _blocksNumber = 0;
+  int _blocksNumber = 5;
   int get blocksNumber => _blocksNumber;
+
+  bool _blocksBin = false;
+  bool get blocksBin => _blocksBin;
 
   set blocksNumber(int newblocksNumber) {
     _blocksNumber = newblocksNumber;
+    notifyListeners();
+  }
+
+  set blocksBin(bool newblocksBin) {
+    _blocksBin = newblocksBin;
     notifyListeners();
   }
 

@@ -31,4 +31,9 @@ class CrabPlayer extends SimplePlayer with BlockMovementCollision, Lighting {
     add(CircleHitbox());
     return super.onLoad();
   }
+
+  @override
+  void stopMove({bool forceIdle = false, bool isX = true, bool isY = true}) {
+    super.stopMove();
+  }
 }

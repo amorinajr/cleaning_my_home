@@ -120,3 +120,14 @@ class CommomSpritesheet {
   static Future<Sprite> get recyclebinSprite =>
       Sprite.load('items/recyclebin.png');
 }
+
+class TalkSpriteSheet {
+  static Future<SpriteAnimation> crabTalking() => SpriteAnimation.load(
+        'player/crab-iddle-front.png',
+        SpriteAnimationData.sequenced(
+          amount: 2,
+          stepTime: 0.4,
+          textureSize: Vector2.all(64),
+        ),
+      );
+}

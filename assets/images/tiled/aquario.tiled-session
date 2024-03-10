@@ -3,21 +3,33 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "aquario.tmj",
+    "activeFile": "aquario-2.tmj",
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "aquario-1.tmj": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 0.556640625,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 941.3614035087719,
+                "y": 623.3824561403508
+            }
+        },
         "aquario-2.tmj": {
             "expandedObjectLayers": [
-                6,
-                5
+                5,
+                6
             ],
-            "scale": 0.33,
+            "scale": 0.5,
             "selectedLayer": 5,
             "viewCenter": {
-                "x": 639.3939393939394,
-                "y": 360.6060606060606
+                "x": 980,
+                "y": 734
             }
         },
         "aquario.tmj": {
@@ -34,7 +46,7 @@
         },
         "aquario.tsj": {
             "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInEditor": 0.5
         }
     },
     "map.height": 45,
@@ -43,14 +55,15 @@
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
-        "aquario.tmj",
         "aquario.tsj",
-        "aquario-2.tmj"
+        "aquario-2.tmj",
+        "aquario-1.tmj"
     ],
     "project": "aquario.tiled-project",
     "recentFiles": [
-        "aquario-2.tmj",
         "aquario.tsj",
+        "aquario-1.tmj",
+        "aquario-2.tmj",
         "aquario.tmj"
     ],
     "tileset.lastUsedFormat": "json"
