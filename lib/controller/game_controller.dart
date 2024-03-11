@@ -1,8 +1,12 @@
 import 'dart:async';
 
+import 'package:cleaning_my_home/controller/blocks_controller.dart';
+import 'package:cleaning_my_home/game.dart';
 import 'package:cleaning_my_home/util/commom_sprite_sheet.dart';
 import 'package:cleaning_my_home/util/custom_sprite_animation_widget.dart';
-import 'package:cleaning_my_home/util/timer_controller.dart';
+import 'package:cleaning_my_home/util/dialogs.dart';
+import 'package:cleaning_my_home/util/sounds.dart';
+import 'package:cleaning_my_home/controller/timer_controller.dart';
 import 'package:cleaning_my_home/decoration/blocks.dart';
 
 import 'package:flutter/services.dart';
@@ -18,8 +22,12 @@ class GameController extends GameComponent {
   late Timer countdown;
   late TimerController timerController;
 
-  int remainingTime = 5;
+  late BlocksNumberController blockControler;
+
+  int remainingTime = 60;
   bool timerStarted = false;
+
+  bool firstTimeStarting = true;
 
   final VoidCallback reset;
 
@@ -32,23 +40,38 @@ class GameController extends GameComponent {
     timerController = TimerController();
     timerController.remainingTime = remainingTime;
 
-    timerController.countDown = Timer(
-      1,
-      onTick: () {
-        if (timerController.remainingTime > 0) {
-          timerController.remainingTime -= 1;
-        }
-      },
-      repeat: true,
-    );
-
-    // **** end fim incialização timer ****
-
     return super.onLoad();
   }
 
   @override
   void onMount() {
+    debugPrint('iniciando o onMount');
+
+    timerController = TimerController();
+    timerController.remainingTime = remainingTime;
+
+    if (firstTimeStarting) {
+      debugPrint('iniciando o Countdown');
+      timerController.countDown = Timer(
+        1,
+        onTick: () {
+          if (timerController.remainingTime > 0) {
+            timerController.remainingTime -= 1;
+          }
+        },
+        repeat: true,
+      );
+      firstTimeStarting = false;
+    }
+// tava no onLoad
+
+    Sounds.playBackgroundSound();
+
+    blockControler = BlocksNumberController();
+    blockControler.blocksBin = false;
+
+    Sounds.talking();
+
     TalkDialog.show(
       gameRef.context,
       [
@@ -58,7 +81,7 @@ class GameController extends GameComponent {
               text: 'We need to clean our home!',
               style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],
@@ -73,7 +96,7 @@ class GameController extends GameComponent {
               text: 'You have a time left to find the blocks!',
               style: TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.w100,
+                fontWeight: FontWeight.w500,
               ),
             )
           ],
@@ -83,9 +106,9 @@ class GameController extends GameComponent {
           personSayDirection: PersonSayDirection.LEFT,
         ),
       ],
-      // onChangeTalk: (index) {
-      //   Sounds.interaction();
-      // },
+      onChangeTalk: (index) {
+        Sounds.talking();
+      },
       onFinish: () {
         finalTalk = true;
       },
@@ -102,6 +125,29 @@ class GameController extends GameComponent {
   void update(double dt) {
 // Código para controle do tempo
 
+    blockControler = BlocksNumberController();
+    if (blockControler.blocksBin && finalTalk) {
+      debugPrint('entrou aqui');
+      finalTalk = false;
+      timerController.remainingTime = 10000;
+      blockControler.blocksBin = false;
+      (gameRef.player as Player).stopMove();
+
+      GameOver.showGameOver(
+        context,
+        () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const Game(
+                mapEscolhido: 2,
+              ),
+            ),
+          );
+        },
+      );
+    }
+
     if (timerController.remainingTime > 0) {
       if (finalTalk) {
         timerController.countDown.update(dt);
@@ -110,6 +156,11 @@ class GameController extends GameComponent {
       finalTalk = false;
       timerController.remainingTime = 10000;
 
+      debugPrint('entrou no final');
+
+      gameRef.pauseEngine();
+
+      Sounds.talking();
       TalkDialog.show(
         gameRef.context,
         [
@@ -119,7 +170,7 @@ class GameController extends GameComponent {
                 text: 'Infelizmente você não conseguiu limpar a tempo!',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],
@@ -134,7 +185,7 @@ class GameController extends GameComponent {
                 text: 'Vamos tentar de novo?',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],
@@ -144,10 +195,12 @@ class GameController extends GameComponent {
             personSayDirection: PersonSayDirection.LEFT,
           ),
         ],
-        // onChangeTalk: (index) {
-        //   Sounds.interaction();
-        // },
+        onChangeTalk: (index) {
+          Sounds.talking();
+        },
         onFinish: () {
+          gameRef.resumeEngine();
+          Sounds.resumeBackgroundSound();
           finalTalk = true;
           reset();
         },
@@ -155,6 +208,8 @@ class GameController extends GameComponent {
           LogicalKeyboardKey.space,
         ],
       );
+
+// fim dialog
     }
 
 // *********
@@ -171,6 +226,7 @@ class GameController extends GameComponent {
       finalTalk = false;
 
       gameRef.pauseEngine();
+      Sounds.talking();
 
       TalkDialog.show(
         gameRef.context,
@@ -181,7 +237,7 @@ class GameController extends GameComponent {
                 text: 'Você pegou todos os blocos, vamos agora para o Bin!',
                 style: TextStyle(
                   fontSize: 20,
-                  fontWeight: FontWeight.w100,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ],
@@ -191,9 +247,9 @@ class GameController extends GameComponent {
             personSayDirection: PersonSayDirection.RIGHT,
           ),
         ],
-        // onChangeTalk: (index) {
-        //   Sounds.interaction();
-        // },
+        onChangeTalk: (index) {
+          Sounds.talking();
+        },
         onFinish: () {
           gameRef.resumeEngine();
           finalTalk = true;

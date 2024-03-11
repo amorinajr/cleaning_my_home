@@ -1,9 +1,10 @@
+import 'package:cleaning_my_home/util/sounds.dart';
 import 'package:flutter/material.dart';
 
 import 'package:bonfire/bonfire.dart';
 
-import 'package:cleaning_my_home/util/blocks_controller.dart';
-import 'package:cleaning_my_home/util/timer_controller.dart';
+import 'package:cleaning_my_home/controller/blocks_controller.dart';
+import 'package:cleaning_my_home/controller/timer_controller.dart';
 
 import 'package:cleaning_my_home/util/commom_sprite_sheet.dart';
 
@@ -44,6 +45,8 @@ class Blocks extends GameDecoration with Sensor {
   void onContact(GameComponent component) {
     if (component is Player) {
       debugPrint('onContact player no block ');
+
+      Sounds.blockPop();
 
       removeFromParent();
 

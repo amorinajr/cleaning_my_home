@@ -11,8 +11,11 @@ dependencies:
     sdk: flutter
 
   bonfire: ^3.6.1
+  flame_audio: ^2.0.5
+  flame_splash_screen: ^0.3.0
 
 dev_dependencies:
+  test: any
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.0
@@ -26,3 +29,5 @@ flutter:
     - assets/images/player/
     - assets/images/items/
     - assets/images/tiled/
+    - assets/images/title-background/
+    - assets/audio/

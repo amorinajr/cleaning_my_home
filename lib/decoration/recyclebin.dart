@@ -3,12 +3,15 @@ import 'package:flutter/services.dart';
 
 import 'package:bonfire/bonfire.dart';
 
+import 'package:cleaning_my_home/controller/blocks_controller.dart';
 import 'package:cleaning_my_home/util/commom_sprite_sheet.dart';
 import 'package:cleaning_my_home/util/custom_sprite_animation_widget.dart';
+import 'package:cleaning_my_home/util/sounds.dart';
 import 'package:cleaning_my_home/decoration/blocks.dart';
 
 class RecycleBin extends GameDecoration with Sensor {
   bool crabContact = false;
+  late BlocksNumberController blockControler;
 
   RecycleBin(Vector2 position)
       : super.withSprite(
@@ -44,10 +47,13 @@ class RecycleBin extends GameDecoration with Sensor {
 
     if (component is Player) {
       if (containBlocks && !crabContact) {
+        component.stopMove();
+
         debugPrint('onContact player no recyclebin ');
 
         gameRef.pauseEngine();
 
+        Sounds.talking();
         TalkDialog.show(
           gameRef.context,
           [
@@ -67,9 +73,9 @@ class RecycleBin extends GameDecoration with Sensor {
               personSayDirection: PersonSayDirection.RIGHT,
             ),
           ],
-          // onChangeTalk: (index) {
-          //   Sounds.interaction();
-          // },
+          onChangeTalk: (index) {
+            Sounds.talking();
+          },
           onFinish: () {
             gameRef.resumeEngine();
             crabContact = true;
@@ -78,8 +84,17 @@ class RecycleBin extends GameDecoration with Sensor {
             LogicalKeyboardKey.space,
           ],
         );
-      } else {
+      } else if (!containBlocks && !crabContact) {
         debugPrint('onContact todos os blocs');
+
+        Sounds.blockRecycleBinPop();
+
+        blockControler = BlocksNumberController();
+        blockControler.blocksBin = true;
+        crabContact = true;
+
+        debugPrint('voltou para o recycle bin');
+        debugPrint('----');
       }
     }
 

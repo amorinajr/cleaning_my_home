@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:bonfire/bonfire.dart';
 
-import 'package:cleaning_my_home/util/blocks_controller.dart';
-import 'package:cleaning_my_home/util/timer_controller.dart';
+import 'package:cleaning_my_home/controller/blocks_controller.dart';
+import 'package:cleaning_my_home/controller/timer_controller.dart';
 
 class Interface extends GameInterface {
   @override
