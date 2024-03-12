@@ -34,13 +34,13 @@ class _CreditsState extends State<Credits> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 50.0,
+                        width: 30.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 75.0,
+                            height: 50.0,
                           ),
                           SizedBox(
                             width: 100,
@@ -59,30 +59,14 @@ class _CreditsState extends State<Credits> {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 125.0,
+                            height: 110.0,
                           ),
                           const SizedBox(
-                            width: 400.0,
+                            width: 325.0,
                             child: Text(
                               'Developed by: Edson Amorina Junior',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Crayon',
-                              ),
-                              textAlign: TextAlign.left,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          const SizedBox(
-                            width: 400.0,
-                            child: Text(
-                              'Background Sound\nArtist: Kirk Osamayo - Title: Video Game Snowy Night - Source: Free Music Archive (CC BY)',
-                              style: TextStyle(
-                                color: Colors.black,
                                 fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
@@ -91,15 +75,15 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            height: 10.0,
+                            height: 5.0,
                           ),
                           const SizedBox(
-                            width: 400.0,
+                            width: 325.0,
                             child: Text(
-                              'Sound Effects\nSource: Zapsplat.com',
+                              '[Background Sound] Artist: Kirk Osamayo - Title: Video Game Snowy Night - Source: Free Music Archive (CC BY)',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 11.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -107,22 +91,38 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            height: 10.0,
+                            height: 5.0,
                           ),
                           const SizedBox(
-                            width: 400.0,
+                            width: 325.0,
+                            child: Text(
+                              '[Sound Effects] Source: Zapsplat.com',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 11.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Crayon',
+                              ),
+                              textAlign: TextAlign.left,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 5.0,
+                          ),
+                          const SizedBox(
+                            width: 325.0,
                             child: Text(
                               '#GlobalGamersChallenge ',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 11.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
                             ),
                           ),
                           const SizedBox(
-                            height: 10,
+                            height: 5,
                           ),
                           SizedBox(
                             width: 250,
@@ -133,13 +133,13 @@ class _CreditsState extends State<Credits> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                minimumSize: const Size(100, 40),
+                                minimumSize: const Size(100, 25),
                               ),
                               child: const Text(
                                 'Back to the Menu',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20.0,
+                                  fontSize: 16.0,
                                   fontFamily: 'Crayon',
                                 ),
                               ),

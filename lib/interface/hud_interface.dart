@@ -37,7 +37,7 @@ class BlocksCounterInterface extends StatelessWidget {
         listenable: controller,
         builder: (context, _) {
           return Padding(
-            padding: const EdgeInsets.only(left: 185, top: 52),
+            padding: const EdgeInsets.only(left: 185, top: 54),
             child: Column(
               children: [
                 Row(
@@ -48,7 +48,7 @@ class BlocksCounterInterface extends StatelessWidget {
                         color: Colors.black,
                         fontWeight: FontWeight.w900,
                         fontFamily: 'Crayon',
-                        fontSize: 24,
+                        fontSize: 18,
                       ),
                     ),
                   ],
@@ -85,12 +85,12 @@ class TimerInterface extends StatelessWidget {
                     Text(
                       timerController.remainingTime > 500
                           ? '0'
-                          : '${timerController.remainingTime.toString().padLeft(3, '0')} s',
+                          : '${timerController.remainingTime.toString().padLeft(3, '0')} sec',
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,
                         fontFamily: 'Crayon',
-                        fontSize: 20,
+                        fontSize: 18,
                       ),
                     ),
                   ],

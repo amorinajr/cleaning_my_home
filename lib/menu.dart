@@ -54,7 +54,7 @@ class _MenuState extends State<Menu> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 50.0,
+                        width: 40.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -63,8 +63,8 @@ class _MenuState extends State<Menu> {
                             height: 75.0,
                           ),
                           SizedBox(
-                            height: 150,
-                            width: 150,
+                            height: 100,
+                            width: 100,
                             child: CustomSpriteAnimationWidget(
                               animation: TalkSpriteSheet.crabTalking(),
                             ),
@@ -72,7 +72,7 @@ class _MenuState extends State<Menu> {
                         ],
                       ),
                       const SizedBox(
-                        width: 50.0,
+                        width: 40.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -83,7 +83,7 @@ class _MenuState extends State<Menu> {
                           ConstrainedBox(
                             constraints: const BoxConstraints(
                               maxWidth: 250,
-                              maxHeight: 50,
+                              maxHeight: 35,
                             ),
                             child: SizedBox(
                               width: MediaQuery.of(context).size.width * 0.8,
@@ -94,13 +94,13 @@ class _MenuState extends State<Menu> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
-                                  minimumSize: const Size(100, 40),
+                                  minimumSize: const Size(100, 25),
                                 ),
                                 child: const Text(
                                   'Play',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20.0,
+                                    fontSize: 16.0,
                                     fontFamily: 'Crayon',
                                   ),
                                 ),
@@ -123,7 +123,7 @@ class _MenuState extends State<Menu> {
                           ConstrainedBox(
                             constraints: const BoxConstraints(
                               maxWidth: 250,
-                              maxHeight: 50,
+                              maxHeight: 35,
                             ),
                             child: SizedBox(
                               width: MediaQuery.of(context).size.width * 0.8,
@@ -134,13 +134,13 @@ class _MenuState extends State<Menu> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
-                                  minimumSize: const Size(100, 40),
+                                  minimumSize: const Size(100, 25),
                                 ),
                                 child: const Text(
                                   'How To Play',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20.0,
+                                    fontSize: 16.0,
                                     fontFamily: 'Crayon',
                                   ),
                                 ),
@@ -156,12 +156,12 @@ class _MenuState extends State<Menu> {
                             ),
                           ),
                           const SizedBox(
-                            height: 25,
+                            height: 10,
                           ),
                           ConstrainedBox(
                             constraints: const BoxConstraints(
                               maxWidth: 250,
-                              maxHeight: 50,
+                              maxHeight: 35,
                             ),
                             child: SizedBox(
                               width: MediaQuery.of(context).size.width * 0.8,
@@ -172,13 +172,13 @@ class _MenuState extends State<Menu> {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5.0),
                                   ),
-                                  minimumSize: const Size(100, 40),
+                                  minimumSize: const Size(100, 25),
                                 ),
                                 child: const Text(
                                   'Credits',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20.0,
+                                    fontSize: 16.0,
                                     fontFamily: 'Crayon',
                                   ),
                                 ),

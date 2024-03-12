@@ -32,7 +32,7 @@ class _HowToPlayState extends State<HowToPlay> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 40.0,
+                        width: 25.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -57,15 +57,15 @@ class _HowToPlayState extends State<HowToPlay> {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 125.0,
+                            height: 110.0,
                           ),
                           const SizedBox(
-                            width: 375.0,
+                            width: 335.0,
                             child: Text(
                               'A child playing threw some of his plastic building blocks into the aquarium, home of our little hero Crab.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -76,12 +76,12 @@ class _HowToPlayState extends State<HowToPlay> {
                             height: 5.0,
                           ),
                           const SizedBox(
-                            width: 375.0,
+                            width: 335.0,
                             child: Text(
                               'Now, you need to help him find the blocks and take them to the recycling bin.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -92,12 +92,12 @@ class _HowToPlayState extends State<HowToPlay> {
                             height: 5.0,
                           ),
                           const SizedBox(
-                            width: 375.0,
+                            width: 335.0,
                             child: Text(
                               'There is a time limit for cleaning, but for each block found, you will gain an increment of time.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -108,12 +108,12 @@ class _HowToPlayState extends State<HowToPlay> {
                             height: 5.0,
                           ),
                           const SizedBox(
-                            width: 375.0,
+                            width: 335.0,
                             child: Text(
                               'So let\'s do this: Help our little hero Crabs in Cleaning His Home!',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14.0,
+                                fontSize: 10.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -121,7 +121,7 @@ class _HowToPlayState extends State<HowToPlay> {
                             ),
                           ),
                           const SizedBox(
-                            height: 5.0,
+                            height: 1.0,
                           ),
                           SizedBox(
                             width: 250,
@@ -132,13 +132,13 @@ class _HowToPlayState extends State<HowToPlay> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5.0),
                                 ),
-                                minimumSize: const Size(100, 40),
+                                minimumSize: const Size(100, 25),
                               ),
                               child: const Text(
                                 'Back to the Menu',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 20.0,
+                                  fontSize: 16.0,
                                   fontFamily: 'Crayon',
                                 ),
                               ),
