@@ -54,7 +54,7 @@ class _MenuState extends State<Menu> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 100.0,
+                        width: 50.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -63,8 +63,8 @@ class _MenuState extends State<Menu> {
                             height: 75.0,
                           ),
                           SizedBox(
-                            height: 200,
-                            width: 200,
+                            height: 150,
+                            width: 150,
                             child: CustomSpriteAnimationWidget(
                               animation: TalkSpriteSheet.crabTalking(),
                             ),
@@ -72,7 +72,7 @@ class _MenuState extends State<Menu> {
                         ],
                       ),
                       const SizedBox(
-                        width: 75.0,
+                        width: 50.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -82,7 +82,7 @@ class _MenuState extends State<Menu> {
                           ),
                           ConstrainedBox(
                             constraints: const BoxConstraints(
-                              maxWidth: 300,
+                              maxWidth: 250,
                               maxHeight: 50,
                             ),
                             child: SizedBox(
@@ -122,7 +122,7 @@ class _MenuState extends State<Menu> {
                           ),
                           ConstrainedBox(
                             constraints: const BoxConstraints(
-                              maxWidth: 300,
+                              maxWidth: 250,
                               maxHeight: 50,
                             ),
                             child: SizedBox(
@@ -160,7 +160,7 @@ class _MenuState extends State<Menu> {
                           ),
                           ConstrainedBox(
                             constraints: const BoxConstraints(
-                              maxWidth: 300,
+                              maxWidth: 250,
                               maxHeight: 50,
                             ),
                             child: SizedBox(

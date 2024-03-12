@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "aquario-2.tmj",
+    "activeFile": "aquario.tsj",
     "expandedProjectPaths": [
         "."
     ],
@@ -11,25 +11,104 @@
     "fileStates": {
         "aquario-1.tmj": {
             "expandedObjectLayers": [
-                7
+                7,
+                5
             ],
-            "scale": 0.556640625,
-            "selectedLayer": 1,
+            "scale": 2,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 641.3473684210526,
-                "y": 361.0947368421053
+                "x": 1019.5,
+                "y": 74
             }
         },
         "aquario-2.tmj": {
             "expandedObjectLayers": [
-                5,
-                6
+                6,
+                5
             ],
-            "scale": 3,
-            "selectedLayer": 2,
+            "scale": 0.75,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 396.66666666666663,
-                "y": 113.33333333333334
+                "x": 501.3333333333333,
+                "y": 302.6666666666667
+            }
+        },
+        "aquario-3.tmj": {
+            "expandedObjectLayers": [
+                6,
+                5
+            ],
+            "scale": 1.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 981.3333333333333,
+                "y": 392.66666666666663
+            }
+        },
+        "aquario-4.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 0.75,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 596,
+                "y": 429.33333333333337
+            }
+        },
+        "aquario-5.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 16,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 448.5625,
+                "y": 60.1875
+            }
+        },
+        "aquario-6.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 1,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 708,
+                "y": 313
+            }
+        },
+        "aquario-7.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 0.5,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 570,
+                "y": 414
+            }
+        },
+        "aquario-8.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 11,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 1197.2727272727275,
+                "y": 68.0909090909091
+            }
+        },
+        "aquario-9.tmj": {
+            "expandedObjectLayers": [
+                5
+            ],
+            "scale": 2,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 262.5,
+                "y": 530.5
             }
         },
         "aquario.tmj": {
@@ -55,15 +134,20 @@
     "map.tileWidth": 16,
     "map.width": 80,
     "openFiles": [
-        "aquario.tsj",
-        "aquario-2.tmj",
-        "aquario-1.tmj"
+        "aquario.tsj"
     ],
     "project": "aquario.tiled-project",
     "recentFiles": [
         "aquario.tsj",
         "aquario-1.tmj",
         "aquario-2.tmj",
+        "aquario-3.tmj",
+        "aquario-4.tmj",
+        "aquario-9.tmj",
+        "aquario-8.tmj",
+        "aquario-7.tmj",
+        "aquario-6.tmj",
+        "aquario-5.tmj",
         "aquario.tmj"
     ],
     "tileset.lastUsedFormat": "json"

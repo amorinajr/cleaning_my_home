@@ -116,7 +116,7 @@ class CommomSpritesheet {
     );
   }
 
-  static Future<Sprite> get blockSprite => Sprite.load('items/block.png');
+  static Future<Sprite> get blockSprite => Sprite.load('items/block-red.png');
   static Future<Sprite> get recyclebinSprite =>
       Sprite.load('items/recyclebin.png');
 }

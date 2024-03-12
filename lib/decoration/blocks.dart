@@ -14,14 +14,14 @@ class Blocks extends GameDecoration with Sensor {
       : super.withSprite(
           sprite: CommomSpritesheet.blockSprite,
           position: position,
-          size: Vector2(32, 32),
+          size: Vector2(32, 16),
         );
 
   @override
   Future<void> onLoad() {
     add(RectangleHitbox(
-      size: Vector2(28, 28),
-      position: Vector2(2, 2),
+      size: Vector2(30, 14),
+      position: Vector2(1, 1),
     ));
 
     // inicialização da variavel de controle do tempo

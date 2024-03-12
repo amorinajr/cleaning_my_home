@@ -19,7 +19,7 @@ class BlocksInterface extends InterfaceComponent {
       : super(
           id: 1,
           position: Vector2(20, 20),
-          size: Vector2(260, 95),
+          size: Vector2(200, 75),
           spriteUnselected: Sprite.load('timer-blocks-counter.png'),
         );
 }
@@ -37,7 +37,7 @@ class BlocksCounterInterface extends StatelessWidget {
         listenable: controller,
         builder: (context, _) {
           return Padding(
-            padding: const EdgeInsets.only(left: 240, top: 66),
+            padding: const EdgeInsets.only(left: 185, top: 52),
             child: Column(
               children: [
                 Row(
@@ -77,7 +77,7 @@ class TimerInterface extends StatelessWidget {
         listenable: timerController,
         builder: (context, _) {
           return Padding(
-            padding: const EdgeInsets.only(left: 156, top: 33),
+            padding: const EdgeInsets.only(left: 130, top: 27),
             child: Column(
               children: [
                 Row(
@@ -85,7 +85,7 @@ class TimerInterface extends StatelessWidget {
                     Text(
                       timerController.remainingTime > 500
                           ? '0'
-                          : '${timerController.remainingTime.toString().padLeft(3, '0')} seconds',
+                          : '${timerController.remainingTime.toString().padLeft(3, '0')} s',
                       style: const TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,

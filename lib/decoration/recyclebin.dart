@@ -38,10 +38,10 @@ class RecycleBin extends GameDecoration with Sensor {
       //     'onContact player não está no recyclebin - crabContact = $crabContact ');
     }
 
-// testar
-    blockControler = BlocksNumberController();
-    blockControler.blocksBin = true;
-    crabContact = true;
+// // atalho para testar nova tela
+//     blockControler = BlocksNumberController();
+//     blockControler.blocksBin = true;
+//     crabContact = true;
 
     super.onContactExit(component);
   }

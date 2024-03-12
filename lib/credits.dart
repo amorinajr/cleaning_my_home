@@ -34,7 +34,7 @@ class _CreditsState extends State<Credits> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 100.0,
+                        width: 50.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -43,8 +43,8 @@ class _CreditsState extends State<Credits> {
                             height: 75.0,
                           ),
                           SizedBox(
-                            width: 200,
-                            height: 200,
+                            width: 100,
+                            height: 100,
                             child: Image.asset(
                               'assets/images/items/recyclebin.png',
                               scale: 0.2,
@@ -53,21 +53,21 @@ class _CreditsState extends State<Credits> {
                         ],
                       ),
                       const SizedBox(
-                        width: 75.0,
+                        width: 25.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 175.0,
+                            height: 125.0,
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            width: 400.0,
                             child: Text(
-                              'Developed by: Edson Amorina Junior\n',
+                              'Developed by: Edson Amorina Junior',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 20.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -75,12 +75,15 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            height: 10.0,
+                          ),
+                          const SizedBox(
+                            width: 400.0,
                             child: Text(
-                              'Background Sound\nArtist: Kirk Osamayo - Title: Video Game Snowy Night - Source: Free Music Archive (CC BY)\n',
+                              'Background Sound\nArtist: Kirk Osamayo - Title: Video Game Snowy Night - Source: Free Music Archive (CC BY)',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -88,12 +91,15 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            height: 10.0,
+                          ),
+                          const SizedBox(
+                            width: 400.0,
                             child: Text(
-                              'Sound Effects\nSource: Zapsplat.com\n',
+                              'Sound Effects\nSource: Zapsplat.com',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -101,7 +107,10 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            width: 250.0,
+                            height: 10.0,
+                          ),
+                          const SizedBox(
+                            width: 400.0,
                             child: Text(
                               '#GlobalGamersChallenge ',
                               style: TextStyle(
@@ -113,7 +122,7 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            height: 25,
+                            height: 10,
                           ),
                           SizedBox(
                             width: 250,

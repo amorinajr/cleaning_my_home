@@ -32,17 +32,17 @@ class _HowToPlayState extends State<HowToPlay> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 75.0,
+                        width: 40.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 50.0,
+                            height: 25.0,
                           ),
                           SizedBox(
-                            width: 200,
-                            height: 200,
+                            width: 100,
+                            height: 100,
                             child: Image.asset(
                               'assets/images/title-background/blocks-how-to-play.png',
                               scale: 0.1,
@@ -51,21 +51,21 @@ class _HowToPlayState extends State<HowToPlay> {
                         ],
                       ),
                       const SizedBox(
-                        width: 50.0,
+                        width: 25.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 175.0,
+                            height: 125.0,
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            width: 375.0,
                             child: Text(
-                              'A child playing threw some of his plastic building blocks into the aquarium, home of our little hero Crab.\n',
+                              'A child playing threw some of his plastic building blocks into the aquarium, home of our little hero Crab.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -73,12 +73,15 @@ class _HowToPlayState extends State<HowToPlay> {
                             ),
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            height: 5.0,
+                          ),
+                          const SizedBox(
+                            width: 375.0,
                             child: Text(
-                              'Now, you need to help him find the blocks and take them to the recycling bin.\n',
+                              'Now, you need to help him find the blocks and take them to the recycling bin.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -86,12 +89,15 @@ class _HowToPlayState extends State<HowToPlay> {
                             ),
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            height: 5.0,
+                          ),
+                          const SizedBox(
+                            width: 375.0,
                             child: Text(
-                              'There is a time limit for cleaning, but for each block found, you will gain an increment of time.\n',
+                              'There is a time limit for cleaning, but for each block found, you will gain an increment of time.',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -99,12 +105,15 @@ class _HowToPlayState extends State<HowToPlay> {
                             ),
                           ),
                           const SizedBox(
-                            width: 450.0,
+                            height: 5.0,
+                          ),
+                          const SizedBox(
+                            width: 375.0,
                             child: Text(
-                              'So let\'s do this: help our little hero Crabs in Cleaning His Home!',
+                              'So let\'s do this: Help our little hero Crabs in Cleaning His Home!',
                               style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 16.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
@@ -112,7 +121,7 @@ class _HowToPlayState extends State<HowToPlay> {
                             ),
                           ),
                           const SizedBox(
-                            height: 25,
+                            height: 5.0,
                           ),
                           SizedBox(
                             width: 250,

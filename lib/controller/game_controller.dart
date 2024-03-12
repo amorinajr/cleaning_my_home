@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:cleaning_my_home/controller/blocks_controller.dart';
 import 'package:cleaning_my_home/game.dart';
@@ -137,14 +138,18 @@ class GameController extends GameComponent {
       blockControler.blocksBin = false;
       (gameRef.player as Player).stopMove();
 
+      // Gerar mapa randomico entre 2 e 9
+      var rng = Random();
+      int randomMap = rng.nextInt(8) + 2;
+
       GameOver.showGameOver(
         context,
         () {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => const Game(
-                mapEscolhido: 2,
+              builder: (context) => Game(
+                mapEscolhido: randomMap,
               ),
             ),
           );
