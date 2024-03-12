@@ -1,5 +1,7 @@
 import 'package:cleaning_my_home/menu.dart';
+
 import 'package:flame_splash_screen/flame_splash_screen.dart';
+
 import 'package:flutter/material.dart';
 
 class SplashScreenGame extends StatefulWidget {
@@ -18,7 +20,7 @@ class _SplashScreenGameState extends State<SplashScreenGame> {
     controller = FlameSplashController(
       fadeInDuration: const Duration(milliseconds: 50),
       fadeOutDuration: const Duration(milliseconds: 50),
-      waitDuration: const Duration(milliseconds: 500),
+      waitDuration: const Duration(seconds: 1),
     );
   }
 
@@ -37,11 +39,11 @@ class _SplashScreenGameState extends State<SplashScreenGame> {
             backgroundColor: Colors.black,
             body: Center(
               child: SizedBox(
-                width: 960,
-                height: 540,
+                width: 1280,
+                height: 720,
                 child: Center(
                   child: Image.asset(
-                    'assets/images/title-background/splash-screen-children-block-aquarium-2.png',
+                    'assets/images/title-background/splash-screen-children-block-aquarium.png',
                     scale: 0.5,
                   ),
                 ),

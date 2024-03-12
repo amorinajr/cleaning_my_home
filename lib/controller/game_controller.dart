@@ -45,13 +45,13 @@ class GameController extends GameComponent {
 
   @override
   void onMount() {
-    debugPrint('iniciando o onMount');
+    // debugPrint('iniciando o onMount');
 
     timerController = TimerController();
     timerController.remainingTime = remainingTime;
 
     if (firstTimeStarting) {
-      debugPrint('iniciando o Countdown');
+      // debugPrint('iniciando o Countdown');
       timerController.countDown = Timer(
         1,
         onTick: () {
@@ -78,10 +78,12 @@ class GameController extends GameComponent {
         Say(
           text: [
             const TextSpan(
-              text: 'We need to clean our home!',
+              text:
+                  'We need to find all the plastic building blocks for cleaning our home!',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
+                fontFamily: 'Crayon',
               ),
             ),
           ],
@@ -93,10 +95,12 @@ class GameController extends GameComponent {
         Say(
           text: [
             const TextSpan(
-              text: 'You have a time left to find the blocks!',
+              text:
+                  'There is a time limit to save our home, but I believe that for each step, we will have a reward.',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w500,
+                fontFamily: 'Crayon',
               ),
             )
           ],
@@ -127,7 +131,7 @@ class GameController extends GameComponent {
 
     blockControler = BlocksNumberController();
     if (blockControler.blocksBin && finalTalk) {
-      debugPrint('entrou aqui');
+      // debugPrint('entrou aqui');
       finalTalk = false;
       timerController.remainingTime = 10000;
       blockControler.blocksBin = false;
@@ -156,7 +160,7 @@ class GameController extends GameComponent {
       finalTalk = false;
       timerController.remainingTime = 10000;
 
-      debugPrint('entrou no final');
+      // debugPrint('entrou no final');
 
       gameRef.pauseEngine();
 
@@ -167,10 +171,12 @@ class GameController extends GameComponent {
           Say(
             text: [
               const TextSpan(
-                text: 'Infelizmente você não conseguiu limpar a tempo!',
+                text:
+                    'Unfortunately you couldn\'t find all the blocks in time!',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'Crayon',
                 ),
               ),
             ],
@@ -182,10 +188,11 @@ class GameController extends GameComponent {
           Say(
             text: [
               const TextSpan(
-                text: 'Vamos tentar de novo?',
+                text: 'However, don\'t give up! Let\'s try again?',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'Crayon',
                 ),
               ),
             ],
@@ -234,10 +241,11 @@ class GameController extends GameComponent {
           Say(
             text: [
               const TextSpan(
-                text: 'Você pegou todos os blocos, vamos agora para o Bin!',
+                text: 'You found and collected all the plastic blocks!',
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  fontFamily: 'Crayon',
                 ),
               ),
             ],
@@ -245,6 +253,22 @@ class GameController extends GameComponent {
               animation: TalkSpriteSheet.crabTalking(),
             ),
             personSayDirection: PersonSayDirection.RIGHT,
+          ),
+          Say(
+            text: [
+              const TextSpan(
+                text: 'We need to take them to the Recycling Bin now.',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w500,
+                  fontFamily: 'Crayon',
+                ),
+              ),
+            ],
+            person: CustomSpriteAnimationWidget(
+              animation: TalkSpriteSheet.crabTalking(),
+            ),
+            personSayDirection: PersonSayDirection.LEFT,
           ),
         ],
         onChangeTalk: (index) {

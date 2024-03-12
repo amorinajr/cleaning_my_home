@@ -31,3 +31,8 @@ flutter:
     - assets/images/tiled/
     - assets/images/title-background/
     - assets/audio/
+
+  fonts:
+   - family: Crayon
+     fonts:
+       - asset: fonts/CrayonLibre-vm6r9.ttf

@@ -1,4 +1,5 @@
 import 'package:bonfire/bonfire.dart';
+
 import 'package:flutter/material.dart';
 
 class CustomSpriteAnimationWidget extends StatelessWidget {

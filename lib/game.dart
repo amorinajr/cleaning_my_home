@@ -42,8 +42,8 @@ class _GameState extends State<Game> {
       color: Colors.black,
       child: Center(
         child: SizedBox(
-          width: 960,
-          height: 540,
+          width: 1280,
+          height: 720,
           child: BonfireWidget(
             key: _gameKey,
             keyboardConfig: KeyboardConfig(
@@ -73,7 +73,7 @@ class _GameState extends State<Game> {
             ),
             lightingColorGame: Colors.blue.withOpacity(0.08),
             cameraConfig: CameraConfig(
-              zoom: getZoomFromMaxVisibleTile(context, tileSize * 2, 16),
+              zoom: getZoomFromMaxVisibleTile(context, tileSize * 1.2, 20),
               moveOnlyMapArea: true,
             ),
             // debugMode: true,

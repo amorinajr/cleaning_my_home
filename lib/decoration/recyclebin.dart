@@ -34,9 +34,14 @@ class RecycleBin extends GameDecoration with Sensor {
   void onContactExit(GameComponent component) {
     if (component is Player) {
       crabContact = false;
-      debugPrint(
-          'onContact player não está no recyclebin - crabContact = $crabContact ');
+      // debugPrint(
+      //     'onContact player não está no recyclebin - crabContact = $crabContact ');
     }
+
+// testar
+    blockControler = BlocksNumberController();
+    blockControler.blocksBin = true;
+    crabContact = true;
 
     super.onContactExit(component);
   }
@@ -49,7 +54,7 @@ class RecycleBin extends GameDecoration with Sensor {
       if (containBlocks && !crabContact) {
         component.stopMove();
 
-        debugPrint('onContact player no recyclebin ');
+        // debugPrint('onContact player no recyclebin ');
 
         gameRef.pauseEngine();
 
@@ -60,10 +65,12 @@ class RecycleBin extends GameDecoration with Sensor {
             Say(
               text: [
                 const TextSpan(
-                  text: 'Você ainda não pegou todos os blocos, procure mais!',
+                  text:
+                      'You still haven\'t picked up all the plastic building blocks!',
                   style: TextStyle(
                     fontSize: 20,
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Crayon',
                   ),
                 ),
               ],
@@ -71,6 +78,22 @@ class RecycleBin extends GameDecoration with Sensor {
                 animation: TalkSpriteSheet.crabTalking(),
               ),
               personSayDirection: PersonSayDirection.RIGHT,
+            ),
+            Say(
+              text: [
+                const TextSpan(
+                  text: 'Search further and then come back here.',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    fontFamily: 'Crayon',
+                  ),
+                ),
+              ],
+              person: CustomSpriteAnimationWidget(
+                animation: TalkSpriteSheet.crabTalking(),
+              ),
+              personSayDirection: PersonSayDirection.LEFT,
             ),
           ],
           onChangeTalk: (index) {
@@ -85,7 +108,7 @@ class RecycleBin extends GameDecoration with Sensor {
           ],
         );
       } else if (!containBlocks && !crabContact) {
-        debugPrint('onContact todos os blocs');
+        // debugPrint('onContact todos os blocs');
 
         Sounds.blockRecycleBinPop();
 
@@ -93,8 +116,8 @@ class RecycleBin extends GameDecoration with Sensor {
         blockControler.blocksBin = true;
         crabContact = true;
 
-        debugPrint('voltou para o recycle bin');
-        debugPrint('----');
+        // debugPrint('voltou para o recycle bin');
+        // debugPrint('----');
       }
     }
 

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Credits extends StatefulWidget {
-  const Credits({super.key});
+class HowToPlay extends StatefulWidget {
+  const HowToPlay({super.key});
 
   @override
-  State<Credits> createState() => _CreditsState();
+  State<HowToPlay> createState() => _HowToPlayState();
 }
 
-class _CreditsState extends State<Credits> {
+class _HowToPlayState extends State<HowToPlay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,8 +19,6 @@ class _CreditsState extends State<Credits> {
           child: Scaffold(
             backgroundColor: Colors.black,
             body: Container(
-              // width: 960,
-              // height: 540,
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
@@ -34,26 +32,26 @@ class _CreditsState extends State<Credits> {
                     mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       const SizedBox(
-                        width: 100.0,
+                        width: 75.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           const SizedBox(
-                            height: 75.0,
+                            height: 50.0,
                           ),
                           SizedBox(
                             width: 200,
                             height: 200,
                             child: Image.asset(
-                              'assets/images/items/recyclebin.png',
-                              scale: 0.2,
+                              'assets/images/title-background/blocks-how-to-play.png',
+                              scale: 0.1,
                             ),
                           ),
                         ],
                       ),
                       const SizedBox(
-                        width: 75.0,
+                        width: 50.0,
                       ),
                       Column(
                         mainAxisSize: MainAxisSize.min,
@@ -64,7 +62,7 @@ class _CreditsState extends State<Credits> {
                           const SizedBox(
                             width: 450.0,
                             child: Text(
-                              'Developed by: Edson Amorina Junior\n',
+                              'A child playing threw some of his plastic building blocks into the aquarium, home of our little hero Crab.\n',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16.0,
@@ -77,7 +75,7 @@ class _CreditsState extends State<Credits> {
                           const SizedBox(
                             width: 450.0,
                             child: Text(
-                              'Background Sound\nArtist: Kirk Osamayo - Title: Video Game Snowy Night - Source: Free Music Archive (CC BY)\n',
+                              'Now, you need to help him find the blocks and take them to the recycling bin.\n',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16.0,
@@ -90,7 +88,7 @@ class _CreditsState extends State<Credits> {
                           const SizedBox(
                             width: 450.0,
                             child: Text(
-                              'Sound Effects\nSource: Zapsplat.com\n',
+                              'There is a time limit for cleaning, but for each block found, you will gain an increment of time.\n',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16.0,
@@ -101,15 +99,16 @@ class _CreditsState extends State<Credits> {
                             ),
                           ),
                           const SizedBox(
-                            width: 250.0,
+                            width: 450.0,
                             child: Text(
-                              '#GlobalGamersChallenge ',
+                              'So let\'s do this: help our little hero Crabs in Cleaning His Home!',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Crayon',
                               ),
+                              textAlign: TextAlign.left,
                             ),
                           ),
                           const SizedBox(
